@@ -11,6 +11,8 @@
 @interface Photo : NSObject
 @property (nonatomic) UIImage * image;
 @property (nonatomic) NSString * title;
+@property (nonatomic) NSString * owner;
+@property (nonatomic) NSString * photoDesc;
 
 - (instancetype)initWithImage: (UIImage *) image andTitle: (NSString *) title;
 @end

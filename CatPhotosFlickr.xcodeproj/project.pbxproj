@@ -15,6 +15,7 @@
 		1D0EFB8C1DE37B3200FB5D95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D0EFB8A1DE37B3200FB5D95 /* LaunchScreen.storyboard */; };
 		1D0EFB951DE381EA00FB5D95 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0EFB941DE381EA00FB5D95 /* Photo.m */; };
 		1D0EFB981DE38C9600FB5D95 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0EFB971DE38C9600FB5D95 /* CollectionViewCell.m */; };
+		1D0EFB9B1DE39A4700FB5D95 /* DetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0EFB9A1DE39A4700FB5D95 /* DetailedViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		1D0EFB941DE381EA00FB5D95 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		1D0EFB961DE38C9600FB5D95 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		1D0EFB971DE38C9600FB5D95 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		1D0EFB991DE39A4700FB5D95 /* DetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedViewController.h; sourceTree = "<group>"; };
+		1D0EFB9A1DE39A4700FB5D95 /* DetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailedViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,8 @@
 				1D0EFB961DE38C9600FB5D95 /* CollectionViewCell.h */,
 				1D0EFB971DE38C9600FB5D95 /* CollectionViewCell.m */,
 				1D0EFB851DE37B3200FB5D95 /* Main.storyboard */,
+				1D0EFB991DE39A4700FB5D95 /* DetailedViewController.h */,
+				1D0EFB9A1DE39A4700FB5D95 /* DetailedViewController.m */,
 				1D0EFB7C1DE37B3200FB5D95 /* Supporting Files */,
 			);
 			path = CatPhotosFlickr;
@@ -164,6 +169,7 @@
 				1D0EFB981DE38C9600FB5D95 /* CollectionViewCell.m in Sources */,
 				1D0EFB841DE37B3200FB5D95 /* ViewController.m in Sources */,
 				1D0EFB811DE37B3200FB5D95 /* AppDelegate.m in Sources */,
+				1D0EFB9B1DE39A4700FB5D95 /* DetailedViewController.m in Sources */,
 				1D0EFB7E1DE37B3200FB5D95 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
