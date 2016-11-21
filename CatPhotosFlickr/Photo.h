@@ -13,6 +13,7 @@
 @property (nonatomic) NSString * title;
 @property (nonatomic) NSString * owner;
 @property (nonatomic) NSString * photoDesc;
+@property (nonatomic) NSString * flickrID;
 
-- (instancetype)initWithImage: (UIImage *) image andTitle: (NSString *) title;
+- (instancetype)initWithImage: (UIImage *) image andTitle: (NSString *) title andID: (NSString *) flickrID;
 @end

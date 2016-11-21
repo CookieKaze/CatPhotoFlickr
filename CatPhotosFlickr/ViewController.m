@@ -23,7 +23,7 @@
     self.photoCollection = [[NSMutableArray alloc] init];
     
     //Create URL and URL request
-    NSURL * url = [NSURL URLWithString:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&format=json&nojsoncallback=1&api_key=83a51eb8204a6855817baba646a9a662&tags=cute%20cat"];
+    NSURL * url = [NSURL URLWithString:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&format=json&nojsoncallback=1&api_key=83a51eb8204a6855817baba646a9a662&tags=cute%20cat&per_page=100&sort=interestingness-desc"];
     NSURLRequest * urlRequest = [NSURLRequest requestWithURL:url];
     
     //Create URL session and get the data
@@ -64,7 +64,7 @@
                                                UIImage *image = [UIImage imageWithData:imageData];
                                                
                                                //Create a Photo object and store it in mutableArray
-                                               Photo * myPhoto = [[Photo alloc] initWithImage:image andTitle:title];
+                                               Photo * myPhoto = [[Photo alloc] initWithImage:image andTitle:title andID: flickrID];
                                                [self.photoCollection addObject:myPhoto];
                                            }
                                            
@@ -86,7 +86,7 @@
     //Get Photo
     Photo * photo = self.photoCollection[indexPath.row];
     //Setup URL
-    NSURL * photoUrl = [NSURL URLWithString:@"https://api.flickr.com/services/rest/?method=flickr.photos.getinfo&format=json&nojsoncallback=1&api_key=83a51eb8204a6855817baba646a9a662&photo_id=31045224151"];
+    NSURL * photoUrl = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.getinfo&format=json&nojsoncallback=1&api_key=83a51eb8204a6855817baba646a9a662&photo_id=%@", photo.flickrID]];
     NSURLRequest * photoRequest = [NSURLRequest requestWithURL:photoUrl];
     
     //Setup Session
@@ -112,6 +112,10 @@
                                             photo.photoDesc = photoDetails[@"description"][@"_content"];
                                             
                                             self.photoCollection[indexPath.row] = photo;
+                                            
+                                            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                                               [self performSegueWithIdentifier:@"detailedView" sender:indexPath];
+                                            }];
                                         }];
     [photoTask resume];
     
@@ -149,7 +153,7 @@
 #pragma mark - Collection Delegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [self getPhotoInfo: indexPath];
-    [self performSegueWithIdentifier:@"detailedView" sender:indexPath];
+    
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(NSIndexPath*)sender {

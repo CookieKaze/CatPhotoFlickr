@@ -9,12 +9,13 @@
 #import "Photo.h"
 
 @implementation Photo
-- (instancetype)initWithImage: (UIImage *) image andTitle: (NSString *) title
+- (instancetype)initWithImage: (UIImage *) image andTitle: (NSString *) title andID: (NSString *) flickrID
 {
     self = [super init];
     if (self) {
         _image = image;
         _title = title;
+        _flickrID = flickrID;
     }
     return self;
 }
