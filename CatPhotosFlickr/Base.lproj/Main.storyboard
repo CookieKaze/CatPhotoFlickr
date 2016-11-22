@@ -174,6 +174,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1p-f0-960">
                                         <rect key="frame" x="0.0" y="0.0" width="113" height="30"/>
                                         <state key="normal" title="Open in browser"/>
+                                        <connections>
+                                            <segue destination="eGH-ed-hhg" kind="show" identifier="webView" id="Z6c-qd-qee"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -213,6 +216,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k0g-2l-w9X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1800.8" y="134.48275862068968"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="Vah-Ko-3Te">
+            <objects>
+                <viewController id="eGH-ed-hhg" customClass="WebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GJy-eq-weo"/>
+                        <viewControllerLayoutGuide type="bottom" id="uPi-Hv-GLG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6WP-oF-8zm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleAspectFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z96-6i-EXz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="z96-6i-EXz" firstAttribute="top" secondItem="GJy-eq-weo" secondAttribute="bottom" constant="-64" id="JD5-FV-mhY"/>
+                            <constraint firstAttribute="trailing" secondItem="z96-6i-EXz" secondAttribute="trailing" id="fHB-8S-Tab"/>
+                            <constraint firstItem="uPi-Hv-GLG" firstAttribute="top" secondItem="z96-6i-EXz" secondAttribute="bottom" id="j5u-IR-5gk"/>
+                            <constraint firstItem="z96-6i-EXz" firstAttribute="leading" secondItem="6WP-oF-8zm" secondAttribute="leading" id="tl4-sL-86K"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="z96-6i-EXz" id="5SC-Cn-gd0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oFg-dm-VwH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2509.5999999999999" y="130.88455772113943"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pa8-Bi-mze">

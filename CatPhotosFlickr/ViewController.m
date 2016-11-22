@@ -110,6 +110,7 @@
                                             NSDictionary * photoDetails = flickrData[@"photo"];
                                             photo.owner = photoDetails[@"owner"][@"realname"];
                                             photo.photoDesc = photoDetails[@"description"][@"_content"];
+                                            photo.url = flickrData[@"photo"][@"urls"][@"url"][0][@"_content"];
                                             
                                             self.photoCollection[indexPath.row] = photo;
                                             

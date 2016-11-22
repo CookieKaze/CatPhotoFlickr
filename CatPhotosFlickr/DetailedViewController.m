@@ -1,3 +1,4 @@
+
 //
 //  DetailedViewController.m
 //  CatPhotosFlickr
@@ -8,6 +9,7 @@
 
 #import "DetailedViewController.h"
 #import "Photo.h"
+#import "WebViewController.h"
 
 @interface DetailedViewController ()
 
@@ -27,19 +29,11 @@
     }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    WebViewController * wvc = [segue destinationViewController];
+    if ([segue.identifier isEqualToString: @"webView"]) {
+        wvc.url = self.photo.url;
+    }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

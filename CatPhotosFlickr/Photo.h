@@ -14,6 +14,8 @@
 @property (nonatomic) NSString * owner;
 @property (nonatomic) NSString * photoDesc;
 @property (nonatomic) NSString * flickrID;
+@property (nonatomic) NSString * url;
+
 
 - (instancetype)initWithImage: (UIImage *) image andTitle: (NSString *) title andID: (NSString *) flickrID;
 @end
